@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="cn.thecover.loaderdemo"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".CursorLoaderActivity"
+            android:label="@string/txt_cursor_loader"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".AsyncTaskActivity"
+            android:label="@string/txt_asynctask_loader"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <provider
+            android:name=".provider.LoaderContentProvider"
+            android:authorities="com.futureagent.loader.content.provider"
+            android:enabled="true"
+            android:exported="true">
+        </provider>
+    </application>
+
+</manifest>
